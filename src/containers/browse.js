@@ -6,20 +6,21 @@ import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
 
 export function BrowseContainer({ slides }) {
-    const [profile, setProfile] = useState({});
-    const [loading, setLoading] = useState(true);
-    const { firebase } = useContext(FirebaseContext);
-    const user = firebase.auth().currentUser || {};
+    const [searchTerm, setSearchTerm] = useState('');
+    const [profile, setProfile] = useState({}); //Cria o estado do perfil a ser escolhido
+    const [loading, setLoading] = useState(true); //Cria o estado da tela de carregar
+    const { firebase } = useContext(FirebaseContext); // Retorna o contexto do Firebase
+    const user = firebase.auth().currentUser || {}; // Retorna as informações do atual usuário usando o contexto que foi retornado
 
-    useEffect(() => {
-        setTimeout(() => {
+    useEffect(() => { //cria um hook para componentDidMount
+        setTimeout(() => { //assim que o componente monta, ele irá esperar 3000 segundos e depois deixar o loading como false
             setLoading(false);
         }, 3000);
-    }, [profile.displayName]);
+    }, [profile.displayName]);//Assegura que somente irá rodar o hook novamente, caso o displayName em profile mude
 
-    return profile.displayName ? (
+    return profile.displayName ? ( //Se escolheram um perfil, carregue a página principal, se não, carregue a de escolher perfil
         <>
-            {loading ? (
+            {loading ? (//Se o estado de loading for true, carregue a página carregando, se não, carregue ReleaseBody
                 <Loading src={user.photoURL} />
             ) : ( 
                 <Loading.ReleaseBody /> 
@@ -33,6 +34,10 @@ export function BrowseContainer({ slides }) {
                         <Header.TextLink>Films</Header.TextLink>
                     </Header.Group>
                     <Header.Group>
+                        <Header.Search
+                            searchTerm={searchTerm} 
+                            setSearchTerm={setSearchTerm} 
+                        />
                         <Header.Profile>
                             <Header.Picture src={user.photoURL} />
                             <Header.Dropdown>
@@ -54,6 +59,7 @@ export function BrowseContainer({ slides }) {
                         walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job
                         as a clown, and the guise he projects in a futile attempt to feel like he&apos;s part of the world around him.
                     </Header.Text>
+                    <Header.PlayButton>Play</Header.PlayButton>
                 </Header.Feature>
             </Header>
         </>
