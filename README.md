@@ -3,7 +3,7 @@
  
  https://www.youtube.com/watch?v=x_EEwGe-a9o&t
  
- Concepts like React Hooks, portals, routes, context and some Javascript features were applied. It was a great way to see how an app like this grows and how the architecture and organization is managed.
+ Concepts like React Hooks, portals, routes, context and some Javascript features were applied. It was a great way to see how an app like this grows and how the architecture and organization are managed.
  
  ## Some images
  
