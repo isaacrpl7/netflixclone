@@ -3,7 +3,6 @@
  
  https://www.youtube.com/watch?v=x_EEwGe-a9o&t
  
- 
  Concepts like React Hooks, portals, routes, context and some Javascript features were applied. It was a great way to see how an app like this grows and how the architecture and organization is managed.
  
  ## Some images
@@ -18,4 +17,4 @@
  
  ### Sign In page
  
- ![alt text](https://preview.redd.it/b401q48znca61.jpg?width=1280&format=pjpg&auto=webp&s=ca393f2aa9c5c33d378db22ce37fe89ba48a7706 "Sign In page)
+ ![alt text](https://preview.redd.it/b401q48znca61.jpg?width=1280&format=pjpg&auto=webp&s=ca393f2aa9c5c33d378db22ce37fe89ba48a7706 "Sign In page")
