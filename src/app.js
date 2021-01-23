@@ -5,7 +5,7 @@ import * as ROUTES from './constants/routes';
 import { IsUserRedirect, ProtectedRoute } from './helpers/routes';
 import { useAuthListener } from './hooks';
 
-function App() {
+export default function App() {
   const {user} = useAuthListener();
 
   return (
@@ -38,5 +38,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
